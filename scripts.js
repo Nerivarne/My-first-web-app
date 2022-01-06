@@ -40,6 +40,40 @@ let sphynx = {
 }
 let imagesData = [bengalska, birma, britka, habesska, mainka, ragdoll, siamka, sphynx];
 let currentPhoto = 0;
-$("#photo").attr("src", imagesData[currentPhoto].photo);
+/*$("#photo").attr("src", imagesData[currentPhoto].photo);
 $("#photo-title").append(imagesData[currentPhoto].title);
-$("#photo-description").append(imagesData[currentPhoto].description);
+$("#photo-description").append(imagesData[currentPhoto].description);*/
+
+let loadPhoto = (numberPhoto) => {
+    $("#photo").attr("src", imagesData[numberPhoto].photo);
+    $("#photo-title").text(imagesData[numberPhoto].title);
+    $("#photo-description").text(imagesData[numberPhoto].description);
+  }
+
+loadPhoto(currentPhoto);
+  
+$("#right-arrow").click(() => {
+   if (currentPhoto >= 7) {
+       currentPhoto = 0 
+   } 
+   else { 
+       currentPhoto++
+   }
+    loadPhoto(currentPhoto);
+  });
+$("#left-arrow").click(() => {
+    if (currentPhoto <= 0) { 
+        currentPhoto = 7; 
+      }
+    else {
+        currentPhoto--
+    }
+    loadPhoto(currentPhoto);
+  });
+
+
+
+
+
+
+

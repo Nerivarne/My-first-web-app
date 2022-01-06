@@ -42,7 +42,7 @@ button:hover {
     width: 50px;
     height: 50px;
 }
-#second-arrow-button {
+#right-arrow {
     transform: rotate(0.5turn);
 }
 #photo {
