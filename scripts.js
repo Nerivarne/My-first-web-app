@@ -69,8 +69,28 @@ $("#left-arrow").click(() => {
         currentPhoto--
     }
     loadPhoto(currentPhoto);
-  });
+  })
 
+  imagesData.forEach(data => {
+    document.getElementById("container").innerHTML += '<img src=' + data.photo + ' class="thumbnails">';
+    $(".thumbnails").click(function (event) {
+        /*$("#container").css("background","lime")*/
+        let indexClicked = $(event.target).attr("data-index");
+        let numberIndex = parseInt(indexClicked);
+        $(".thumbnails").text(data[indexClicked]);
+        
+    })
+    })  
+
+  /*document.getElementsByClassName("thumbnails").addEventListener("click", function() {
+      
+  })*/
+
+/*$(".thumbnails").click(function() {
+    let indexClicked =
+    $(function.target).a
+    
+})*/
 
 
 
